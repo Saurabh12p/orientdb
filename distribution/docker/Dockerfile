@@ -6,10 +6,11 @@
 FROM azul/zulu-openjdk:11
 
 MAINTAINER OrientDB LTD (info@orientdb.com)
-
+ARG IN_SOURCE_PATH
 RUN mkdir /orientdb
 
-COPY orientdb-community-*.tar.gz /orientdb-community.tar.gz
+# COPY ${IN_SOURCE_PATH} /orientdb-community.tar.gz
+COPY "${IN_SOURCE_PATH}orientdb-community-*.tar.gz" /orientdb-community.tar.gz
 
 RUN apt update \
     && apt install -y curl wget \
