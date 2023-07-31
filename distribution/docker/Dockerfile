@@ -10,7 +10,7 @@ MAINTAINER OrientDB LTD (info@orientdb.com)
 RUN mkdir /orientdb
 
 # COPY ${IN_SOURCE_PATH} /orientdb-community.tar.gz
-COPY ../../distribution/target/orientdb-community-*.tar.gz /orientdb-community.tar.gz
+COPY ../target/orientdb-community-*.tar.gz /orientdb-community.tar.gz
 
 RUN apt update \
     && apt install -y curl wget \
